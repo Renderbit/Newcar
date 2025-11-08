@@ -1246,15 +1246,16 @@
 
                 // 1247-1255줄
                 try {
-                    // Send directly to Make.com webhook (CORS may block, but data still sends)
+                    // Send directly to Make.com webhook with no-cors mode
                     fetch('https://hook.eu2.make.com/twgpmizpikr5dmd6jqaxa4jyh3mqofnd', {
                         method: 'POST',
+                        mode: 'no-cors',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify(formData)
                     }).catch(() => {
-                        // Ignore CORS error - webhook still receives data
+                        // Ignore any errors - data still sends
                     });
 
                     // Show success message immediately (webhook works even with CORS error)
