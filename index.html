@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프리미엄 신차 장기렌트 - 합리적인 가격으로</title>
+    <meta name="description" content="신차 장기렌트 최저가 보장! 빠른 출고, 투명한 견적으로 프리미엄 신차를 합리적인 가격에 만나보세요.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                        url('https://www.kia.com/content/dam/kwp/kr/ko/vehicles/carnival-hi/26my/the_2026_carnival_feature_bg_pc.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-feature svg {
+            width: 24px;
+            height: 24px;
+            fill: #d4af37;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #d4af37;
+            color: #0a0a0a;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #c19e2f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 4rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: #222;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: #d4af37;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #a0a0a0;
+        }
+
+        /* Application Section */
+        .bg-accent {
+            background-color: rgba(26, 26, 26, 0.3);
+        }
+
+        .application-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .application-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .application-info > p {
+            font-size: 1.125rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: #d4af37;
+        }
+
+        .info-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-item p {
+            color: #a0a0a0;
+        }
+
+        /* Form Styles */
+        .form-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 0.375rem;
+            color: #ffffff;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .form-group.error .form-input,
+        .form-group.error .form-select {
+            border-color: #ef4444;
+        }
+
+        /* Car List Section */
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .car-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .car-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .car-content {
+            padding: 1.5rem;
+        }
+
+        .car-brand {
+            color: #d4af37;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .car-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .car-price {
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+        }
+
+        .car-price strong {
+            color: #d4af37;
+            font-size: 1.5rem;
+        }
+
+        .car-features-list {
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            line-height: 1.8;
+        }
+
+        /* Calculator Section */
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            padding: 3rem;
+        }
+
+        .calc-group {
+            margin-bottom: 2rem;
+        }
+
+        .calc-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .calc-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .calc-option {
+            padding: 1rem;
+            background: #0a0a0a;
+            border: 2px solid #333;
+            border-radius: 0.375rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .calc-option:hover {
+            border-color: #d4af37;
+        }
+
+        .calc-option.active {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .calc-option-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .calc-option-label {
+            font-size: 0.875rem;
+            color: #a0a0a0;
+        }
+
+        .calc-result {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #0a0a0a;
+            border: 2px solid #d4af37;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .calc-result-label {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-result-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .calc-result-note {
+            font-size: 0.875rem;
+            color: #a0a0a0;
+        }
+
+        /* Reviews Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            background: #222;
+        }
+
+        .review-card.fade-out {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .review-card.fade-in {
+            animation: fadeInReview 0.5s ease forwards;
+        }
+
+        @keyframes fadeInReview {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            width: 20px;
+            height: 20px;
+        }
+
+        .star.filled {
+            fill: #d4af37;
+        }
+
+        .star.empty {
+            fill: #666;
+        }
+
+        .review-customer {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .review-car {
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            margin-bottom: 1rem;
+        }
+
+        .review-comment {
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        /* Kakao Section */
+        .kakao-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .kakao-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kakao-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #d4af37;
+        }
+
+        .kakao-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .kakao-id {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.5rem;
+            font-family: monospace;
+            background: transparent;
+            border: 1px solid #333;
+            border-radius: 0.375rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .kakao-card p {
+            color: #a0a0a0;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid #333;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            border: none;
+            color: #ffffff;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            color: #d4af37;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #1a1a1a;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            color: #a0a0a0;
+            line-height: 1.8;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                        url('https://i.namu.wiki/i/hCueLL_3Q97qX_XXHCPMGLZ4OLBYPmbM5ve8v4QuzdYuqVVYUisRK_PpQE6pBkNIrdx_Xtere41fmAcQoNmFOA.webp') center/cover;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: #1a1a1a;
+            border: 1px solid #d4af37;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .success-message h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message p {
+            color: #a0a0a0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .application-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>프리미엄 신차,<br>합리적인 가격으로</h1>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>최저가 보장</span>
+                </div>
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 20c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2m5 9.5V13h-6V7h1.5v4.5H17z"/></svg>
+                    <span>빠른 출고</span>
+                </div>
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                    <span>투명한 견적</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToForm()">바로 신청하기</button>
+                <button class="btn btn-secondary" onclick="scrollToKakao()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 3.08 2.16 5.68 5.28 6.76l-1.44 4.32c-.12.36.24.66.57.47L11.5 18c.16 0 .33.01.5.01 5.52 0 10-3.58 10-8S17.52 2 12 2z"/></svg>
+                    카톡 문의
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">왜 여기서 신청해야 할까요?</h2>
+            <p class="section-subtitle">차별화된 혜택으로 최상의 서비스를 제공합니다</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                    </div>
+                    <h3>최저가 보장</h3>
+                    <p>업계 최저가로 합리적인 신차 장기렌트를 제공합니다</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 2.03v2.02c4.39.54 7.5 4.53 6.96 8.92-.46 3.64-3.32 6.53-6.96 6.96v2c5.5-.55 9.5-5.43 8.95-10.93-.45-4.75-4.22-8.5-8.95-8.97m-2 0c-1.95.19-3.81.94-5.33 2.2L7.1 5.74c1.12-.9 2.47-1.48 3.9-1.68v-2.03M4.26 5.67A9.885 9.885 0 0 0 2.05 11h2.02c.19-1.42.75-2.77 1.64-3.9L4.26 5.67M15.5 8.5l-5 5-2-2-3 3 2 2 3-3 5 5 3-3-3-7z"/></svg>
+                    </div>
+                    <h3>빠른 출고</h3>
+                    <p>신속한 차량 출고로 빠르게 드라이빙을 시작하세요</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
+                    <h3>전문 상담</h3>
+                    <p>경험 많은 상담사의 1:1 맞춤 컨설팅을 받으실 수 있습니다</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <h3>투명한 견적</h3>
+                    <p>숨겨진 비용 없이 명확하고 투명한 견적을 제공합니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car List Section -->
+    <section class="bg-accent">
+        <div class="container">
+            <h2 class="section-title">인기 차량 라인업</h2>
+            <p class="section-subtitle">다양한 브랜드와 모델 중에서 선택하세요</p>
+            <div class="car-grid">
+                <div class="car-card" onclick="scrollToForm()">
+                    <div class="car-image">
+                        <img src="https://autoimg.danawa.com/photo/4465/model_200.png" alt="제네시스 GV80">
+                    </div>
+                    <div class="car-content">
+                        <div class="car-brand">GENESIS</div>
+                        <h3 class="car-name">제네시스 GV80</h3>
+                        <div class="car-price">월 <strong>67만원</strong>~</div>
+                        <div class="car-features-list">
+                            • 3.5 터보 가솔린<br>
+                            • 7인승 / 풀옵션<br>
+                            • 48개월 / 2만km
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card" onclick="scrollToForm()">
+                    <div class="car-image">
+                        <img src="https://autoimg.danawa.com/photo/4699/model_200.png" alt="현대 팰리세이드">
+                    </div>
+                    <div class="car-content">
+                        <div class="car-brand">HYUNDAI</div>
+                        <h3 class="car-name">현대 팰리세이드</h3>
+                        <div class="car-price">월 <strong>55만원</strong>~</div>
+                        <div class="car-features-list">
+                            • 2.2 디젤<br>
+                            • 8인승 / 캘리그래피<br>
+                            • 48개월 / 2만km
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card" onclick="scrollToForm()">
+                    <div class="car-image">
+                        <img src="https://autoimg.danawa.com/photo/4586/model_200.png" alt="기아 카니발">
+                    </div>
+                    <div class="car-content">
+                        <div class="car-brand">KIA</div>
+                        <h3 class="car-name">기아 카니발</h3>
+                        <div class="car-price">월 <strong>52만원</strong>~</div>
+                        <div class="car-features-list">
+                            • 2.2 디젤<br>
+                            • 11인승 / 시그니처<br>
+                            • 48개월 / 2만km
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card" onclick="scrollToForm()">
+                    <div class="car-image">
+                        <img src="https://autoimg.danawa.com/photo/4516/model_200.png" alt="벤츠 E클래스">
+                    </div>
+                    <div class="car-content">
+                        <div class="car-brand">MERCEDES-BENZ</div>
+                        <h3 class="car-name">벤츠 E클래스</h3>
+                        <div class="car-price">월 <strong>89만원</strong>~</div>
+                        <div class="car-features-list">
+                            • E300 가솔린<br>
+                            • AMG 라인<br>
+                            • 48개월 / 2만km
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card" onclick="scrollToForm()">
+                    <div class="car-image">
+                        <img src="https://autoimg.danawa.com/photo/4517/model_200.png" alt="BMW 5시리즈">
+                    </div>
+                    <div class="car-content">
+                        <div class="car-brand">BMW</div>
+                        <h3 class="car-name">BMW 5시리즈</h3>
+                        <div class="car-price">월 <strong>82만원</strong>~</div>
+                        <div class="car-features-list">
+                            • 520i 가솔린<br>
+                            • M 스포츠 패키지<br>
+                            • 48개월 / 2만km
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card" onclick="scrollToForm()">
+                    <div class="car-image">
+                        <img src="https://autoimg.danawa.com/photo/4603/model_200.png" alt="제네시스 G80">
+                    </div>
+                    <div class="car-content">
+                        <div class="car-brand">GENESIS</div>
+                        <h3 class="car-name">제네시스 G80</h3>
+                        <div class="car-price">월 <strong>62만원</strong>~</div>
+                        <div class="car-features-list">
+                            • 2.5 터보 가솔린<br>
+                            • 5인승 / 프레스티지<br>
+                            • 48개월 / 2만km
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">간편 견적 계산기</h2>
+            <p class="section-subtitle">원하는 조건을 선택하고 예상 월 납입금을 확인하세요</p>
+            <div class="calculator-container">
+                <div class="calc-group">
+                    <label>계약 기간</label>
+                    <div class="calc-options">
+                        <div class="calc-option" onclick="selectCalcOption(this, 'period', 12)">
+                            <div class="calc-option-value">12개월</div>
+                            <div class="calc-option-label">단기</div>
+                        </div>
+                        <div class="calc-option" onclick="selectCalcOption(this, 'period', 24)">
+                            <div class="calc-option-value">24개월</div>
+                            <div class="calc-option-label">기본</div>
+                        </div>
+                        <div class="calc-option active" onclick="selectCalcOption(this, 'period', 36)">
+                            <div class="calc-option-value">36개월</div>
+                            <div class="calc-option-label">추천</div>
+                        </div>
+                        <div class="calc-option" onclick="selectCalcOption(this, 'period', 48)">
+                            <div class="calc-option-value">48개월</div>
+                            <div class="calc-option-label">장기</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-group">
+                    <label>연간 주행거리</label>
+                    <div class="calc-options">
+                        <div class="calc-option" onclick="selectCalcOption(this, 'distance', 10000)">
+                            <div class="calc-option-value">1만km</div>
+                            <div class="calc-option-label">시내</div>
+                        </div>
+                        <div class="calc-option active" onclick="selectCalcOption(this, 'distance', 20000)">
+                            <div class="calc-option-value">2만km</div>
+                            <div class="calc-option-label">일반</div>
+                        </div>
+                        <div class="calc-option" onclick="selectCalcOption(this, 'distance', 30000)">
+                            <div class="calc-option-value">3만km</div>
+                            <div class="calc-option-label">장거리</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-group">
+                    <label>선수금</label>
+                    <div class="calc-options">
+                        <div class="calc-option active" onclick="selectCalcOption(this, 'deposit', 0)">
+                            <div class="calc-option-value">0원</div>
+                            <div class="calc-option-label">무보증</div>
+                        </div>
+                        <div class="calc-option" onclick="selectCalcOption(this, 'deposit', 10)">
+                            <div class="calc-option-value">10%</div>
+                            <div class="calc-option-label">절감</div>
+                        </div>
+                        <div class="calc-option" onclick="selectCalcOption(this, 'deposit', 20)">
+                            <div class="calc-option-value">20%</div>
+                            <div class="calc-option-label">최대절감</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-result">
+                    <div class="calc-result-label">예상 월 납입금</div>
+                    <div class="calc-result-price" id="calcResultPrice">52만원</div>
+                    <div class="calc-result-note">※ 실제 견적은 차량 및 옵션에 따라 달라질 수 있습니다</div>
+                    <button class="btn btn-primary" style="margin-top: 1.5rem;" onclick="scrollToForm()">정확한 견적 받기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="application-form" class="bg-accent">
+        <div class="container">
+            <div class="application-grid">
+                <div class="application-info">
+                    <h2>지금 바로 신청하세요</h2>
+                    <p>간단한 정보 입력만으로 맞춤 견적을 받아보실 수 있습니다</p>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>빠른 응답</h4>
+                            <p>신청 후 1시간 내 연락드립니다</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div>
+                            <h4>맞춤 견적</h4>
+                            <p>고객님께 최적화된 견적을 제공합니다</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                        </div>
+                        <div>
+                            <h4>개인정보 보호</h4>
+                            <p>안전하게 암호화되어 관리됩니다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <form id="applicationForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="name">이름</label>
+                            <input type="text" id="name" class="form-input" placeholder="홍길동" required>
+                            <div class="error-message">이름은 2자 이상 입력해주세요</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phone">연락처</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="010-1234-5678" required>
+                            <div class="error-message">올바른 전화번호 형식이 아닙니다</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="carModel">희망 차종</label>
+                            <select id="carModel" class="form-select" required>
+                                <option value="">차종을 선택해주세요</option>
+                                <option value="genesis-g80">제네시스 G80</option>
+                                <option value="genesis-gv80">제네시스 GV80</option>
+                                <option value="hyundai-grandeur">현대 그랜저</option>
+                                <option value="hyundai-palisade">현대 팰리세이드</option>
+                                <option value="kia-k8">기아 K8</option>
+                                <option value="kia-carnival">기아 카니발</option>
+                                <option value="benz-e-class">벤츠 E클래스</option>
+                                <option value="bmw-5-series">BMW 5시리즈</option>
+                                <option value="other">기타</option>
+                            </select>
+                            <div class="error-message">희망 차종을 선택해주세요</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="budget">월 예산</label>
+                            <select id="budget" class="form-select" required>
+                                <option value="">예산을 선택해주세요</option>
+                                <option value="under-30">30만원 이하</option>
+                                <option value="30-50">30만원 - 50만원</option>
+                                <option value="50-70">50만원 - 70만원</option>
+                                <option value="70-100">70만원 - 100만원</option>
+                                <option value="over-100">100만원 이상</option>
+                            </select>
+                            <div class="error-message">예산을 선택해주세요</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">문의사항 (선택)</label>
+                            <textarea id="message" class="form-textarea" placeholder="궁금하신 내용을 자유롭게 작성해주세요"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">신청하기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">실시간 고객 후기</h2>
+            <p class="section-subtitle">고객님들의 생생한 후기를 확인해보세요</p>
+            <div class="reviews-grid" id="reviewsContainer">
+                <!-- 후기는 JavaScript로 동적 생성됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Kakao Section -->
+    <section id="kakao-section" class="bg-accent">
+        <div class="container">
+            <div class="kakao-card">
+                <div class="kakao-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.58 2 10c0 3.08 2.16 5.68 5.28 6.76l-1.44 4.32c-.12.36.24.66.57.47L11.5 18c.16 0 .33.01.5.01 5.52 0 10-3.58 10-8S17.52 2 12 2z"/></svg>
+                </div>
+                <h2>카카오톡 문의</h2>
+                <div class="kakao-id">XXX123</div>
+                <p style="font-size: 1.125rem; margin-bottom: 0.5rem;">빠른 상담 가능, 24시간 응답</p>
+                <p style="font-size: 0.875rem;">카카오톡 검색창에 ID를 입력하시면 바로 문의하실 수 있습니다</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">자주 묻는 질문</h2>
+            <p class="section-subtitle">궁금하신 내용을 미리 확인해보세요</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">신차 장기렌트와 구매의 차이는 무엇인가요?</button>
+                    <div class="faq-answer">
+                        <p>장기렌트는 초기 비용 부담 없이 월 납입금만으로 신차를 이용할 수 있으며, 세금, 보험, 정비 등이 포함되어 편리합니다. 구매는 차량 소유권을 가지지만 초기 비용과 유지비가 많이 듭니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">계약 기간은 어떻게 되나요?</button>
+                    <div class="faq-answer">
+                        <p>일반적으로 12개월부터 60개월까지 선택 가능하며, 고객님의 상황에 맞춰 유연하게 조정할 수 있습니다. 장기 계약일수록 월 납입금이 저렴해집니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">보험료와 자동차세도 포함되나요?</button>
+                    <div class="faq-answer">
+                        <p>네, 모든 패키지에 자동차세, 보험료, 정기점검이 포함되어 있습니다. 별도 추가 비용 없이 편리하게 이용하실 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">중도 해지가 가능한가요?</button>
+                    <div class="faq-answer">
+                        <p>계약 기간 중 부득이한 사정으로 해지가 필요한 경우, 중도 해지 위약금이 발생할 수 있습니다. 자세한 사항은 상담 시 안내해드립니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">계약 종료 후 차량 인수가 가능한가요?</button>
+                    <div class="faq-answer">
+                        <p>네, 계약 종료 후 잔존 가치로 차량을 인수하실 수 있으며, 반납 또는 재계약도 가능합니다. 선택의 폭이 넓습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">어떤 차종을 선택할 수 있나요?</button>
+                    <div class="faq-answer">
+                        <p>국산차부터 수입차까지 다양한 브랜드와 차종을 제공합니다. 현대, 기아, 제네시스는 물론 벤츠, BMW, 아우디 등 프리미엄 브랜드도 이용 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>지금 신청하고<br>특별 혜택 받기</h2>
+            <p>오늘 신청하시는 분들께 특별 할인 혜택을 제공합니다</p>
+            <button class="btn btn-primary" onclick="scrollToForm()">지금 바로 신청하기</button>
+        </div>
+    </section>
+
+    <!-- Success Message Toast -->
+    <div id="successMessage" class="success-message">
+        <h3>✓ 신청이 완료되었습니다!</h3>
+        <p>빠른 시일 내에 연락드리겠습니다. 감사합니다.</p>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                button.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        // Scroll to Form
+        function scrollToForm() {
+            document.getElementById('application-form').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+
+        // Scroll to Kakao
+        function scrollToKakao() {
+            document.getElementById('kakao-section').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+
+        // Form Validation & Submission
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('applicationForm');
+            const submitButton = form.querySelector('button[type="submit"]');
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const carModel = document.getElementById('carModel').value;
+            const budget = document.getElementById('budget').value;
+            const message = document.getElementById('message').value.trim();
+            
+            let isValid = true;
+
+            // Reset errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+
+            // Validate name
+            if (name.length < 2) {
+                document.getElementById('name').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate phone
+            const phoneRegex = /^[0-9-]+$/;
+            if (phone.length < 10 || !phoneRegex.test(phone)) {
+                document.getElementById('phone').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate car model
+            if (!carModel) {
+                document.getElementById('carModel').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            // Validate budget
+            if (!budget) {
+                document.getElementById('budget').parentElement.classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Disable submit button and show loading state
+                const originalButtonText = submitButton.textContent;
+                submitButton.disabled = true;
+                submitButton.textContent = '전송 중...';
+
+                const formData = {
+                    name,
+                    phone,
+                    carModel,
+                    budget,
+                    message
+                };
+
+                try {
+                    // Send to backend API (which handles webhook internally)
+                    const response = await fetch('/api/applications', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (response.ok) {
+                        // Show success message
+                        const successMessage = document.getElementById('successMessage');
+                        successMessage.classList.add('show');
+                        
+                        // Hide after 5 seconds
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 5000);
+
+                        // Reset form
+                        form.reset();
+                        
+                        console.log('✅ 신청이 성공적으로 전송되었습니다');
+                    } else {
+                        const errorData = await response.json();
+                        throw new Error(errorData.message || 'Failed to submit');
+                    }
+                } catch (error) {
+                    console.error('❌ 전송 실패:', error);
+                    alert('신청 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+                } finally {
+                    // Re-enable submit button
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }
+            }
+        }
+
+        // Calculator functionality
+        let calcSettings = {
+            period: 36,
+            distance: 20000,
+            deposit: 0
+        };
+
+        function selectCalcOption(element, type, value) {
+            // Remove active from siblings
+            const siblings = element.parentElement.querySelectorAll('.calc-option');
+            siblings.forEach(s => s.classList.remove('active'));
+            
+            // Add active to clicked element
+            element.classList.add('active');
+            
+            // Update settings
+            calcSettings[type] = value;
+            
+            // Calculate and update price
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            // Base price
+            let basePrice = 600000; // 60만원
+            
+            // Period adjustment
+            if (calcSettings.period === 12) basePrice *= 1.3;
+            else if (calcSettings.period === 24) basePrice *= 1.15;
+            else if (calcSettings.period === 36) basePrice *= 1.0;
+            else if (calcSettings.period === 48) basePrice *= 0.9;
+            
+            // Distance adjustment
+            if (calcSettings.distance === 10000) basePrice *= 0.85;
+            else if (calcSettings.distance === 30000) basePrice *= 1.15;
+            
+            // Deposit adjustment
+            if (calcSettings.deposit === 10) basePrice *= 0.92;
+            else if (calcSettings.deposit === 20) basePrice *= 0.85;
+            
+            // Format and display
+            const priceInMan = Math.round(basePrice / 10000);
+            document.getElementById('calcResultPrice').textContent = priceInMan + '만원';
+        }
+
+        // Reviews rotation functionality
+        const allReviews = [
+            { name: '김**', car: '제네시스 GV80', rating: 5, comment: '전문적인 상담과 빠른 출고로 매우 만족합니다. 견적도 타사 대비 훨씬 합리적이었어요!' },
+            { name: '박**', car: '벤츠 E클래스', rating: 5, comment: '처음 장기렌트 이용해봤는데 과정이 너무 간단하고 투명했습니다. 강력 추천합니다.' },
+            { name: '이**', car: '현대 팰리세이드', rating: 5, comment: '가족들이 모두 만족하고 있어요. 차량 상태도 완벽하고 월 납입금도 부담없습니다.' },
+            { name: '최**', car: 'BMW 5시리즈', rating: 5, comment: '상담사님이 친절하게 설명해주셔서 이해하기 쉬웠습니다. 다음에도 꼭 이용할게요!' },
+            { name: '정**', car: '기아 카니발', rating: 4, comment: '출고까지 2주밖에 안 걸렸어요. 빠른 서비스에 감사드립니다.' },
+            { name: '강**', car: '제네시스 G80', rating: 5, comment: '여러 곳 비교해봤는데 여기가 가장 좋았습니다. 숨은 비용도 전혀 없어요.' },
+            { name: '윤**', car: '현대 그랜저', rating: 5, comment: '믿을 수 있는 업체입니다. 지인에게도 추천했어요!' },
+            { name: '조**', car: 'BMW 3시리즈', rating: 5, comment: '월 납입금이 합리적이고 차량 관리도 잘 되어 있습니다.' },
+            { name: '한**', car: '기아 K8', rating: 4, comment: '처음엔 걱정했는데 결과가 너무 좋아서 만족합니다.' },
+            { name: '송**', car: '벤츠 C클래스', rating: 5, comment: '프리미엄 차량을 부담 없이 이용할 수 있어서 좋아요.' }
+        ];
+
+        function getRandomReviews(count) {
+            const shuffled = [...allReviews].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        function createReviewCard(review) {
+            const stars = Array(5).fill(0).map((_, i) => {
+                const fillClass = i < review.rating ? 'filled' : 'empty';
+                return `<svg class="star ${fillClass}" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+            }).join('');
+
+            return `
+                <div class="review-card fade-in">
+                    <div class="review-stars">${stars}</div>
+                    <p class="review-customer">${review.name}</p>
+                    <p class="review-car">${review.car}</p>
+                    <p class="review-comment">${review.comment}</p>
+                </div>
+            `;
+        }
+
+        function updateReviews() {
+            const container = document.getElementById('reviewsContainer');
+            const cards = container.querySelectorAll('.review-card');
+            
+            // Fade out
+            cards.forEach(card => card.classList.add('fade-out'));
+            
+            // Wait for fade out, then replace
+            setTimeout(() => {
+                const newReviews = getRandomReviews(3);
+                container.innerHTML = newReviews.map(createReviewCard).join('');
+            }, 300);
+        }
+
+        function startReviewRotation() {
+            // Initial load
+            const container = document.getElementById('reviewsContainer');
+            const initialReviews = getRandomReviews(3);
+            container.innerHTML = initialReviews.map(createReviewCard).join('');
+            
+            // Update every 8 seconds
+            setInterval(updateReviews, 8000);
+        }
+
+        // Smooth scroll for all internal links
+        document.addEventListener('DOMContentLoaded', function() {
+            calculatePrice(); // Initialize calculator
+            startReviewRotation(); // Start review rotation
+        });
+    </script>
+</body>
+</html>
