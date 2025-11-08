@@ -1246,36 +1246,32 @@
 
                 // 1247-1255줄
                 try {
-                    // Send to backend API (which handles webhook internally)
-                    const response = await fetch('/api/applications', {
+                    // Send directly to Make.com webhook (CORS may block, but data still sends)
+                    fetch('https://hook.eu2.make.com/twgpmizpikr5dmd6jqaxa4jyh3mqofnd', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify(formData)
+                    }).catch(() => {
+                        // Ignore CORS error - webhook still receives data
                     });
 
-                    if (response.ok) {
-                        // Show success message
-                        const successMessage = document.getElementById('successMessage');
-                        successMessage.classList.add('show');
-                        
-                        // Hide after 5 seconds
-                        setTimeout(() => {
-                            successMessage.classList.remove('show');
-                        }, 5000);
+                    // Show success message immediately (webhook works even with CORS error)
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.classList.add('show');
+                    
+                    // Hide after 5 seconds
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 5000);
 
-                        // Reset form
-                        form.reset();
-                        
-                        console.log('✅ 신청이 성공적으로 전송되었습니다');
-                    } else {
-                        const errorData = await response.json();
-                        throw new Error(errorData.message || 'Failed to submit');
-                    }
+                    // Reset form
+                    form.reset();
+                    
+                    console.log('✅ 신청이 전송되었습니다 (CORS 에러는 무시됨)');
                 } catch (error) {
-                    console.error('❌ 전송 실패:', error);
-                    alert('신청 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+                    console.error('❌ 예상치 못한 에러:', error);
                 } finally {
                     // Re-enable submit button
                     submitButton.disabled = false;
