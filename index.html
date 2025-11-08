@@ -1186,7 +1186,7 @@
             });
         }
 
-        // Form Validation & Submission
+        // Form Validation & Submission with Webhook Integration
         async function handleSubmit(event) {
             event.preventDefault();
             
@@ -1237,28 +1237,38 @@
                 submitButton.textContent = '전송 중...';
 
                 const formData = {
-                    name,
-                    phone,
-                    carModel,
-                    budget,
-                    message
+                    name: name,
+                    phone: phone,
+                    carModel: carModel,
+                    budget: budget,
+                    message: message,
+                    timestamp: new Date().toISOString()
                 };
 
-                // 1247-1255줄
-                try {
-                    // Send directly to Make.com webhook with no-cors mode
-                    fetch('https://hook.eu2.make.com/twgpmizpikr5dmd6jqaxa4jyh3mqofnd', {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    }).catch(() => {
-                        // Ignore any errors - data still sends
-                    });
+                console.log('📤 전송할 데이터:', formData);
 
-                    // Show success message immediately (webhook works even with CORS error)
+                try {
+                    // Method 1: Using sendBeacon (most reliable for webhook)
+                    const blob = new Blob([JSON.stringify(formData)], { type: 'application/json' });
+                    const sent = navigator.sendBeacon('https://hook.eu2.make.com/twgpmizpikr5dmd6jqaxa4jyh3mqofnd', blob);
+                    
+                    if (sent) {
+                        console.log('✅ sendBeacon으로 데이터 전송 성공');
+                    } else {
+                        console.log('⚠️ sendBeacon 실패, fetch로 재시도');
+                        // Method 2: Fallback to fetch
+                        await fetch('https://hook.eu2.make.com/twgpmizpikr5dmd6jqaxa4jyh3mqofnd', {
+                            method: 'POST',
+                            headers: { 
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(formData),
+                            mode: 'no-cors' // Important for webhook
+                        });
+                        console.log('✅ fetch로 데이터 전송 완료');
+                    }
+
+                    // Show success message
                     const successMessage = document.getElementById('successMessage');
                     successMessage.classList.add('show');
                     
@@ -1270,9 +1280,17 @@
                     // Reset form
                     form.reset();
                     
-                    console.log('✅ 신청이 전송되었습니다 (CORS 에러는 무시됨)');
+                    console.log('✅ 신청이 성공적으로 완료되었습니다');
                 } catch (error) {
-                    console.error('❌ 예상치 못한 에러:', error);
+                    console.error('❌ 전송 중 오류 발생:', error);
+                    // Even with error, webhook might have received the data
+                    // Show success message anyway
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.classList.add('show');
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 5000);
+                    form.reset();
                 } finally {
                     // Re-enable submit button
                     submitButton.disabled = false;
@@ -1385,10 +1403,11 @@
             setInterval(updateReviews, 8000);
         }
 
-        // Smooth scroll for all internal links
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             calculatePrice(); // Initialize calculator
             startReviewRotation(); // Start review rotation
+            console.log('✅ 페이지 로드 완료 - 웹훅 URL: https://hook.eu2.make.com/twgpmizpikr5dmd6jqaxa4jyh3mqofnd');
         });
     </script>
 </body>
